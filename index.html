@@ -1,0 +1,2174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Discover ARLO OS, a modern, customizable Windows desktop with built-in apps, developer tools and optional Ghost AI. macOS and Linux releases are coming soon.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://abhishek-operating-system.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ARLO OS">
+  <meta property="og:title" content="ARLO OS — Modern Windows Desktop">
+  <meta property="og:description" content="A modern, customizable Windows desktop with built-in apps, developer tools and optional Ghost AI. macOS and Linux releases are coming soon.">
+  <meta property="og:url" content="https://abhishek-operating-system.netlify.app/">
+  <meta property="og:image" content="https://abhishek-operating-system.netlify.app/images/Screenshot%20%28439%29.png">
+  <meta property="og:image:alt" content="ARLO OS desktop environment and workspace">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ARLO OS — Modern Windows Desktop">
+  <meta name="twitter:description" content="Discover the customizable ARLO OS desktop, built-in apps, developer tools and optional Ghost AI. macOS and Linux releases are coming soon.">
+  <meta name="twitter:image" content="https://abhishek-operating-system.netlify.app/images/Screenshot%20%28439%29.png">
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/Screenshot%202026-10-05%20134343.png"
+  >
+  <link
+    rel="apple-touch-icon"
+    href="images/Screenshot%202026-10-05%20134343.png"
+  >
+
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- GSAP -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    defer
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    defer
+  ></script>
+
+  <title>ARLO OS — Modern Windows Desktop</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ARLO OS",
+      "applicationCategory": "DesktopApplication",
+      "operatingSystem": ["Windows 10", "Windows 11"],
+      "description": "A modern, customizable desktop experience with built-in apps, developer tools, desktop workspaces and optional Ghost AI.",
+      "url": "https://abhishek-operating-system.netlify.app/",
+      "image": "https://abhishek-operating-system.netlify.app/images/Screenshot%20%28439%29.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://apps.microsoft.com/store/detail/9NN6LSN1KSZF"
+      },
+      "downloadUrl": "https://github.com/Abhishekkuntare/arlo-os/releases",
+      "sameAs": [
+        "https://github.com/Abhishekkuntare/arlo-os",
+        "https://apps.microsoft.com/store/detail/9NN6LSN1KSZF"
+      ]
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="showcase.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- =====================================================
+       BACKGROUND
+  ====================================================== -->
+
+  <div class="noise"></div>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="ambient ambient-c"></div>
+
+  <div class="grid"></div>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="nav">
+
+    <a
+      href="#top"
+      class="brand magnetic"
+      aria-label="ARLO OS"
+    >
+
+      <img class="brand-symbol" src="images/Screenshot%202026-10-05%20134343.png" alt="">
+      <img class="brand-wordmark" src="images/arlo-wordmark-transparent.png" alt="ARLO OS">
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="#showcase">
+        Showcase
+      </a>
+
+      <a href="#experience">
+        Experience
+      </a>
+
+      <a href="#features">
+        Features
+      </a>
+
+      <a href="#requirements">
+        Requirements
+      </a>
+
+      <a href="#download">
+        Download
+      </a>
+
+      <a href="#faq">
+        FAQ
+      </a>
+
+      <a class="nav-store" href="https://apps.microsoft.com/store/detail/9NN6LSN1KSZF?cid=DevShareMCLPCS" target="_blank" rel="noopener noreferrer">
+        Microsoft Store <span>↗</span>
+      </a>
+
+      <a
+        class="nav-github magnetic"
+        href="https://github.com/Abhishekkuntare/arlo-os"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+        <span>↗</span>
+      </a>
+
+    </nav>
+
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="#showcase">
+      Showcase
+    </a>
+
+    <a href="#experience">
+      Experience
+    </a>
+
+    <a href="#features">
+      Features
+    </a>
+
+    <a href="#requirements">
+      Requirements
+    </a>
+
+    <a href="#download">
+      Download
+    </a>
+
+    <a href="#faq">
+      FAQ
+    </a>
+
+    <a href="https://apps.microsoft.com/store/detail/9NN6LSN1KSZF?cid=DevShareMCLPCS" target="_blank" rel="noopener noreferrer">
+      Get it from Microsoft Store ↗
+    </a>
+
+    <a
+      href="https://github.com/Abhishekkuntare/arlo-os"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub ↗
+    </a>
+
+  </div>
+
+
+  <main id="main-content">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="hero" id="top">
+
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+
+
+      <div class="hero-content">
+
+        <div class="hero-brand-lockup" aria-label="ARLO OS">
+          <img src="images/Screenshot%202026-10-05%20134343.png" alt="">
+          <img class="hero-wordmark" src="images/arlo-wordmark-transparent.png" alt="ARLO OS">
+        </div>
+
+       <div class="eyebrow hero-eyebrow">
+
+  <span class="status-dot"></span>
+
+  <span>
+    A MODERN DESKTOP ENVIRONMENT FOR WINDOWS, MACOS & LINUX
+  </span>
+
+  <span class="eyebrow-line"></span>
+
+  <span>
+    CROSS-PLATFORM DESKTOP
+  </span>
+
+</div>
+
+        <h1 class="hero-title">
+
+          <span class="title-line">
+            A whole new desktop
+          </span>
+
+          <span class="title-line title-muted">
+            <em>for the way you work.</em>
+          </span>
+
+        </h1>
+
+
+        <p class="hero-copy">
+
+          Meet ARLO OS: a modern, customizable desktop experience
+          for Windows, with built-in apps, developer tools and optional
+          Ghost AI. macOS and Linux releases are coming soon.
+
+        </p>
+
+
+        <!-- ACTIONS -->
+
+        <div
+          class="hero-actions"
+          id="download"
+        >
+
+       <a
+  class="button primary magnetic"
+  href="https://apps.microsoft.com/store/detail/9NN6LSN1KSZF?cid=DevShareMCLPCS"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="button-icon mascot-icon" aria-hidden="true">
+    <img src="./images/mascot.png" alt="" />
+  </span>
+
+  <span class="button-text">
+    <strong>Get ARLO OS</strong>
+    <small>Microsoft Store · Windows</small>
+  </span>
+
+  <span class="button-arrow" aria-hidden="true">
+    ↗
+  </span>
+</a>
+
+
+<!-- Windows Installer -->
+<a
+  class="button store-button magnetic"
+  id="downloadButton"
+  href="https://apps.microsoft.com/store/detail/9NN6LSN1KSZF?cid=DevShareMCLPCS"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="button-icon download-icon" aria-hidden="true">
+    ↓
+  </span>
+
+  <span class="button-text">
+    <strong>Download for Windows</strong>
+    <small>Windows 10 / 11 · x64 installer</small>
+  </span>
+</a>
+
+        </div>
+
+
+        <div class="download-meta">
+
+          <span id="downloadNote">
+            ARLO OS · Free download
+          </span>
+
+          <span class="meta-separator"></span>
+
+          <span>
+            Windows available · macOS &amp; Linux coming soon
+          </span>
+
+          <span class="meta-separator"></span>
+
+          <span>
+            Free download
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           OS PREVIEW
+      ================================================== -->
+
+      <div
+        class="desktop-stage"
+        id="desktopStage"
+      >
+
+        <div class="stage-grid"></div>
+
+        <div class="stage-glow"></div>
+
+        <div class="stage-ring ring-one"></div>
+        <div class="stage-ring ring-two"></div>
+
+
+        <!-- DESKTOP -->
+
+        <div
+          class="window-card"
+          id="windowCard"
+        >
+
+          <div class="window-reflection"></div>
+
+
+          <!-- TOP BAR -->
+
+          <div class="window-top">
+
+            <div class="traffic">
+
+              <i></i>
+              <i></i>
+              <i></i>
+
+            </div>
+
+
+            <div class="window-title">
+              ARLO OS
+            </div>
+
+
+            <div class="window-system">
+
+              <span class="system-dot"></span>
+
+              Windows · ARLO OS
+
+            </div>
+
+          </div>
+
+
+          <!-- DESKTOP -->
+
+          <div class="os-desktop">
+
+
+            <!-- WALLPAPER -->
+
+            <div class="os-wallpaper">
+
+              <div class="wallpaper-orb orb-a"></div>
+              <div class="wallpaper-orb orb-b"></div>
+              <div class="wallpaper-orb orb-c"></div>
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <div class="os-menu">
+
+              <strong>
+                ARLO OS
+              </strong>
+
+              <span>
+                Workspace
+              </span>
+
+              <span>
+                File
+              </span>
+
+              <span>
+                Edit
+              </span>
+
+              <span>
+                View
+              </span>
+
+              <span>
+                Window
+              </span>
+
+              <span>
+                Help
+              </span>
+
+              <div class="os-menu-right">
+
+                <span>
+                  ◌
+                </span>
+
+                <span>
+                  ◔
+                </span>
+
+                <span>
+                  09:41
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- DESKTOP CONTENT -->
+
+            <div class="os-content">
+
+              <div class="welcome-card">
+
+                <div class="welcome-small">
+                  GOOD AFTERNOON
+                </div>
+
+                <h3>
+                  Build something
+                  <strong>remarkable.</strong>
+                </h3>
+
+                <p>
+                  Your apps. Your projects.
+                  Your workspace.
+                </p>
+
+              </div>
+
+
+              <!-- MINI WINDOWS -->
+
+              <div class="mini-window code-window">
+
+                <div class="mini-window-header">
+
+                  <span class="mini-dot"></span>
+
+                  <span>
+                    VS Code
+                  </span>
+
+                </div>
+
+                <div class="code-lines">
+
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+
+                </div>
+
+              </div>
+
+
+              <div class="mini-window browser-window">
+
+                <div class="mini-window-header">
+
+                  <span class="mini-dot"></span>
+
+                  <span>
+                    Browser
+                  </span>
+
+                </div>
+
+                <div class="browser-content">
+
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                </div>
+
+              </div>
+
+
+              <!-- DOCK -->
+
+              <div class="dock">
+
+                <div class="dock-icon active">
+                  A
+                </div>
+
+                <div class="dock-icon">
+                  ◉
+                </div>
+
+                <div class="dock-icon">
+                  ◫
+                </div>
+
+                <div class="dock-icon">
+                  ◈
+                </div>
+
+                <div class="dock-icon">
+                  ⌘
+                </div>
+
+                <div class="dock-icon">
+                  ✦
+                </div>
+
+                <div class="dock-divider"></div>
+
+                <div class="dock-icon">
+                  ⚙
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLOATING LABEL -->
+
+        <div class="floating-pill">
+
+          <span>✦</span>
+
+          Dock
+
+          <i></i>
+
+          Spaces
+
+          <i></i>
+
+          Finder
+
+          <i></i>
+
+          Spotlight
+
+        </div>
+
+
+        <div class="floating-status">
+
+          <span class="status-dot"></span>
+
+          Windows transformed
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-scroll">
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
+
+        <div class="scroll-line">
+          <span></span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SYSTEM SHOWCASE — PRODUCT WALKTHROUGH
+    ==================================================== -->
+
+    <section class="system-showcase" id="showcase">
+      <div class="showcase-orbit showcase-orbit-a"></div>
+      <div class="showcase-orbit showcase-orbit-b"></div>
+
+      <div class="showcase-head reveal">
+        <div class="showcase-kicker">
+          <span class="status-dot"></span>
+          THE ARLO OS PRODUCT WALKTHROUGH
+        </div>
+
+        <div class="showcase-heading-row">
+          <div>
+            <div class="section-number">00</div>
+            <h2>
+              See the system
+              <br>
+              <em>in motion.</em>
+            </h2>
+          </div>
+
+          <p>
+            Watch a guided tour of ARLO OS, then explore real desktop
+            captures below. The video loads only when you choose to play it.
+          </p>
+        </div>
+      </div>
+
+      <div class="showcase-video-shell reveal" id="showcaseVideoShell">
+        <div class="video-stage-grid"></div>
+        <div class="video-stage-glow"></div>
+
+        <div class="video-floating-badge video-badge-top">
+          <span class="live-pulse"></span>
+          PRODUCT TOUR · LOADS ON PLAY
+        </div>
+
+        <div class="showcase-video-frame">
+          <div class="showcase-video-chrome">
+            <div class="video-traffic">
+              <i></i><i></i><i></i>
+            </div>
+            <span>ARLO OS · PRODUCT WALKTHROUGH</span>
+            <span class="video-chrome-right">SYNTHESIA · 1080P</span>
+          </div>
+
+          <div class="showcase-video-viewport" id="showcaseVideoViewport">
+            <button
+              class="synthesia-launch"
+              id="synthesiaLaunch"
+              type="button"
+              aria-label="Play the ARLO OS product walkthrough"
+            >
+              <img
+                src="images/Screenshot%20(439).png"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              >
+              <span class="synthesia-launch-play" aria-hidden="true">▶</span>
+              <span class="synthesia-launch-caption" aria-hidden="true">
+                <strong>Explore ARLO OS</strong>
+                <small>Play product walkthrough · Loads on demand</small>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-metrics reveal">
+        <div>
+          <span>01</span>
+          <strong>REAL</strong>
+          <small>Desktop capture</small>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>FLUID</strong>
+          <small>Animated workspace</small>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>SPATIAL</strong>
+          <small>3D-inspired interface</small>
+        </div>
+        <div>
+          <span>04</span>
+          <strong>PERSONAL</strong>
+          <small>Your daily workstation</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         REAL SYSTEM GALLERY
+    ==================================================== -->
+
+    <section class="system-gallery section" id="real-system">
+      <div class="section-head reveal">
+        <div class="section-number">01A</div>
+
+        <div>
+          <div class="eyebrow">
+            REAL SYSTEM CAPTURES
+          </div>
+
+          <h2>
+            Explore the desktop.
+            <br>
+            <em>Frame by frame.</em>
+          </h2>
+
+          <p class="section-intro">
+            Browse all 24 real product screenshots. Use the arrows, swipe,
+            or select any image to see it in full size.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-controls" aria-label="Screenshot carousel controls">
+        <span id="galleryPosition" aria-live="polite">01 / 24</span>
+        <div>
+          <button class="gallery-arrow" id="galleryPrevious" type="button" aria-label="Previous screenshot">←</button>
+          <button class="gallery-arrow" id="galleryNext" type="button" aria-label="Next screenshot">→</button>
+        </div>
+      </div>
+
+      <div class="system-gallery-grid" id="systemGalleryTrack" aria-label="ARLO OS screenshot carousel">
+        <button class="system-shot system-shot-large reveal" type="button"
+          data-gallery-index="0"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(439).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>01</b>
+            <strong>Desktop workspace</strong>
+            <small>Wallpaper · Dock · Widgets</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="1"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(441).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>02</b>
+            <strong>Personal profile</strong>
+            <small>Workspace controls</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="2"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(442).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>03</b>
+            <strong>Immersive desktop</strong>
+            <small>Ambient workspace</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="3"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(443).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>04</b>
+            <strong>Developer flow</strong>
+            <small>Terminal · Workspace</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot system-shot-tall reveal" type="button"
+          data-gallery-index="4"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(444).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>05</b>
+            <strong>File workspace</strong>
+            <small>Navigation · Files</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot system-shot-wide reveal" type="button"
+          data-gallery-index="5"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(445).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>06</b>
+            <strong>Connected experience</strong>
+            <small>Apps · Mobile view</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="6"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(447).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>07</b>
+            <strong>Media workspace</strong>
+            <small>Gallery · Content</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="7"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(448).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>08</b>
+            <strong>Reminders</strong>
+            <small>Tasks · Planning</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot system-shot-featured reveal" type="button"
+          data-gallery-index="8"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(449).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>09</b>
+            <strong>Application center</strong>
+            <small>Launch · Organize · Discover</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="9"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(450).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>10</b>
+            <strong>Focus mode</strong>
+            <small>Transitions · Depth</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot reveal" type="button"
+          data-gallery-index="10"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(453).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>11</b>
+            <strong>Lock screen</strong>
+            <small>Time · Identity</small>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <button class="system-shot system-shot-wide reveal" type="button"
+          data-gallery-index="11"
+          aria-label="Open ARLO OS desktop screenshot">
+          <img src="images/Screenshot%20(465).png" alt="ARLO OS desktop screenshot" loading="lazy">
+          <span class="shot-overlay">
+            <b>12</b>
+            <strong>Analytics workspace</strong>
+            <small>Data · Productivity</small>
+            <i>↗</i>
+          </span>
+        </button>
+      </div>
+
+      <div class="gallery-foot reveal">
+        <span class="gallery-foot-line"></span>
+        <span>24 REAL SYSTEM CAPTURES · FULL IMAGES, NEVER CROPPED</span>
+        <span class="gallery-foot-line"></span>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         GALLERY LIGHTBOX
+    ==================================================== -->
+
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="ARLO OS screenshot viewer">
+        <div class="lightbox-topbar">
+          <span id="lightboxCounter">01 / 24</span>
+          <span>ARLO OS · REAL SYSTEM</span>
+          <button type="button" id="lightboxClose" aria-label="Close image viewer">×</button>
+        </div>
+
+        <div class="lightbox-media">
+          <button type="button" class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous screenshot">‹</button>
+          <img id="lightboxImage" src="" alt="">
+          <button type="button" class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next screenshot">›</button>
+        </div>
+
+        <div class="lightbox-caption">
+          <div>
+            <span id="lightboxEyebrow">SYSTEM CAPTURE</span>
+            <h3 id="lightboxTitle">Desktop workspace</h3>
+          </div>
+          <span id="lightboxHint">ESC to close · ← → to navigate</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- ===================================================
+         INTERACTIVE OS LAB — MASTER EXPERIENCE
+    ==================================================== -->
+
+    <section class="os-lab" id="os-lab">
+      <div class="os-lab-bg-grid"></div>
+      <div class="os-lab-orb os-lab-orb-a"></div>
+      <div class="os-lab-orb os-lab-orb-b"></div>
+
+      <div class="os-lab-head reveal">
+        <div>
+          <div class="showcase-kicker"><span class="status-dot"></span>INTERACTIVE SYSTEM LAB</div>
+          <h2>Don’t just <em>look</em> at it.<br>Play with the OS.</h2>
+          <p>Explore an interactive ARLO OS preview — switch workspaces, open app windows, try the command palette and adjust quick controls.</p>
+        </div>
+        <div class="os-lab-shortcuts">
+          <span><kbd>Ctrl</kbd><kbd>K</kbd> Command</span>
+          <span><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Spaces</span>
+          <span><kbd>Esc</kbd> Close</span>
+        </div>
+      </div>
+
+      <div class="os-lab-console" id="osLabConsole">
+        <div class="os-lab-windowbar">
+          <div class="os-lab-traffic"><i></i><i></i><i></i></div>
+          <div class="os-lab-window-title"><span class="os-lab-live-dot"></span> ARLO OS · Interactive Preview</div>
+          <div class="os-lab-window-meta"><span id="labClock">09:41</span><span>●</span><button type="button" id="labControlToggle" aria-label="Open control center">◒</button></div>
+        </div>
+
+        <div class="os-lab-desktop" id="osLabDesktop">
+          <div class="os-lab-wallpaper" id="osLabWallpaper"></div>
+          <div class="os-lab-noise"></div>
+          <div class="os-lab-topline">
+            <strong>ARLO OS</strong>
+            <button type="button" data-lab-menu="workspace">Workspace</button>
+            <button type="button" data-lab-menu="apps">Apps</button>
+            <button type="button" data-lab-menu="view">View</button>
+            <div class="os-lab-topright"><span>⌁</span><span>Wi‑Fi</span><span>100%</span></div>
+          </div>
+
+          <div class="os-lab-space-label"><span id="labSpaceLabel">SPACE 01</span><b id="labSpaceTitle">Command Center</b></div>
+
+          <div class="lab-window lab-window-main" data-lab-window="browser" style="--x:9%;--y:18%;--r:-1.2deg;">
+            <div class="lab-window-header"><div class="lab-window-traffic"><i></i><i></i><i></i></div><strong>ARLO Browser</strong><span>⌘K</span></div>
+            <div class="lab-browser-toolbar"><button type="button">‹</button><button type="button">›</button><div>https://arlo-os.local/explore</div><button type="button">↗</button></div>
+            <div class="lab-browser-body">
+              <div class="lab-browser-hero"><span>OS EXPERIENCE</span><strong>Spatial computing,<br>without the friction.</strong><p>Switch spaces. Launch tools. Keep your flow.</p><button type="button" data-lab-action="focus">Enter Focus Mode ↗</button></div>
+              <div class="lab-browser-cards"><div><span>01</span><b>Workspace</b><small>Organize your day</small></div><div><span>02</span><b>AI Studio</b><small>Build with intelligence</small></div><div><span>03</span><b>Control</b><small>Everything at a glance</small></div></div>
+            </div>
+          </div>
+
+          <div class="lab-window lab-window-terminal" data-lab-window="terminal" style="--x:57%;--y:12%;--r:1.3deg;">
+            <div class="lab-window-header"><div class="lab-window-traffic"><i></i><i></i><i></i></div><strong>Terminal</strong><span>zsh</span></div>
+            <div class="lab-terminal-body"><p><b>arlo@desktop</b> <span>~</span> $ neofetch</p><p class="terminal-dim">ARLO OS  ·  Windows</p><p class="terminal-dim">Runtime    Electron</p><p class="terminal-dim">Workspace  Your desktop</p><p class="terminal-dim">Assistant  Ghost AI</p><p><b>arlo@desktop</b> <span>~</span> $ <i class="terminal-caret"></i></p></div>
+          </div>
+
+          <div class="lab-window lab-window-notes" data-lab-window="notes" style="--x:63%;--y:55%;--r:-.8deg;">
+            <div class="lab-window-header"><div class="lab-window-traffic"><i></i><i></i><i></i></div><strong>Quick Notes</strong><span>Today</span></div>
+            <div class="lab-notes-body"><div class="lab-note-pin">✦</div><h3>Build something remarkable.</h3><p>Ideas, tasks and moments stay inside one calm workspace.</p><div class="lab-note-line"></div><div class="lab-note-line short"></div></div>
+          </div>
+
+          <div class="lab-control-center" id="labControlCenter" aria-hidden="true">
+            <div class="lab-cc-head"><span>CONTROL CENTER</span><button type="button" id="labControlClose">×</button></div>
+            <div class="lab-cc-grid">
+              <button type="button" class="lab-toggle active" data-toggle="wifi"><b>⌁</b><span>Wi‑Fi</span><small>Connected</small></button>
+              <button type="button" class="lab-toggle active" data-toggle="focus"><b>◐</b><span>Focus</span><small>On</small></button>
+              <button type="button" class="lab-toggle" data-toggle="air"><b>✈</b><span>Airplane</span><small>Off</small></button>
+              <button type="button" class="lab-toggle" data-toggle="dark"><b>◑</b><span>Dark Mode</span><small>On</small></button>
+            </div>
+            <div class="lab-slider"><span>Brightness</span><input id="labBrightness" type="range" min="45" max="100" value="82" aria-label="Brightness"></div>
+            <div class="lab-slider"><span>Depth</span><input id="labDepth" type="range" min="0" max="100" value="68" aria-label="Depth"></div>
+          </div>
+
+          <div class="lab-command" id="labCommand" aria-hidden="true">
+            <div class="lab-command-box">
+              <span class="lab-command-icon">⌕</span><input id="labCommandInput" type="text" autocomplete="off" placeholder="Search apps, spaces, actions…" aria-label="Command palette search"><kbd>ESC</kbd>
+            </div>
+            <div class="lab-command-results" id="labCommandResults"></div>
+          </div>
+
+          <div class="lab-toast" id="labToast" role="status" aria-live="polite"></div>
+
+          <div class="lab-dock" id="labDock">
+            <button type="button" class="lab-dock-icon active" data-open="browser" aria-label="Open Browser"><span>◉</span><small>Browser</small></button>
+            <button type="button" class="lab-dock-icon" data-open="terminal" aria-label="Open Terminal"><span>⌘</span><small>Terminal</small></button>
+            <button type="button" class="lab-dock-icon" data-open="notes" aria-label="Open Notes"><span>✎</span><small>Notes</small></button>
+            <button type="button" class="lab-dock-icon" data-lab-action="focus" aria-label="Focus mode"><span>◒</span><small>Focus</small></button>
+            <span class="lab-dock-divider"></span>
+            <button type="button" class="lab-dock-icon" data-lab-action="wallpaper" aria-label="Change wallpaper"><span>✦</span><small>Wallpaper</small></button>
+            <button type="button" class="lab-dock-icon" data-lab-action="command" aria-label="Open command palette"><span>⌕</span><small>Search</small></button>
+          </div>
+        </div>
+
+        <div class="os-lab-footer">
+          <div class="lab-spaces" id="labSpaces">
+            <button type="button" class="active" data-space="1"><span>01</span><b>Command</b></button>
+            <button type="button" data-space="2"><span>02</span><b>Creative</b></button>
+            <button type="button" data-space="3"><span>03</span><b>Developer</b></button>
+          </div>
+          <div class="lab-footer-hint"><span class="lab-key-dot"></span> Interactive preview · every control is live</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         EXPERIENCE
+    ==================================================== -->
+
+    <section
+      class="section experience-section-main"
+      id="experience"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          01
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            THE EXPERIENCE
+          </div>
+
+          <h2>
+
+            Your PC.
+            <br>
+
+            <em>A whole new desktop.</em>
+
+          </h2>
+
+          <p class="section-intro">
+
+            ARLO OS brings a modern, customizable desktop
+            environment to Windows, with built-in apps,
+            productivity tools and a visual style of its own.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="experience-grid">
+
+        <article class="experience-card reveal">
+
+          <div class="experience-visual">
+
+            <div class="visual-dock">
+
+              <span>A</span>
+              <span>◉</span>
+              <span>◫</span>
+              <span>◈</span>
+              <span>⌘</span>
+
+            </div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <span class="experience-label">
+              ALWAYS WITH YOU
+            </span>
+
+            <h3>
+              A beautiful Dock
+            </h3>
+
+            <p>
+              Keep your most important applications
+              accessible through a fluid, animated
+              Dock experience.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card reveal">
+
+          <div class="experience-visual spaces-visual">
+
+            <div class="space-card active">
+              01
+            </div>
+
+            <div class="space-card">
+              02
+            </div>
+
+            <div class="space-card">
+              03
+            </div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <span class="experience-label">
+              MULTIPLE WORKSPACES
+            </span>
+
+            <h3>
+              Spaces
+            </h3>
+
+            <p>
+              Separate work, coding, browsing and
+              personal tasks into clean virtual
+              workspaces.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card reveal">
+
+          <div class="experience-visual mission-visual">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <span class="experience-label">
+              SEE EVERYTHING
+            </span>
+
+            <h3>
+              Window overview
+            </h3>
+
+            <p>
+              Find your files and work with local
+              folders you have connected to ARLO OS.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card reveal">
+
+          <div class="experience-visual spotlight-visual">
+
+            <div class="spotlight-search">
+
+              <span>
+                ⌕
+              </span>
+
+              <span>
+                Search anything...
+              </span>
+
+              <kbd>
+                ⌘
+              </kbd>
+
+              <kbd>
+                K
+              </kbd>
+
+            </div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <span class="experience-label">
+              FIND IT FAST
+            </span>
+
+            <h3>
+              Ghost AI
+            </h3>
+
+            <p>
+              Meet your optional AI desktop assistant
+              for natural-language chat and registered
+              everyday system actions.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FEATURE MARQUEE
+    ==================================================== -->
+
+    <section class="feature-marquee">
+
+      <div class="marquee-track">
+
+        <span>
+          GHOST AI
+        </span>
+
+        <i></i>
+
+        <span>
+          29 DESKTOP THEMES
+        </span>
+
+        <i></i>
+
+        <span>
+          CODE STUDIO
+        </span>
+
+        <i></i>
+
+        <span>
+          FINDER
+        </span>
+
+        <i></i>
+
+        <span>
+          QUICK LOOK
+        </span>
+
+        <i></i>
+
+        <span>
+          ACTIVITY TRACKING
+        </span>
+
+        <i></i>
+
+        <span>
+          WINDOWS DESKTOP
+        </span>
+
+        <i></i>
+
+        <span>
+          BUILT-IN APPS
+        </span>
+
+        <i></i>
+
+        <span>
+          GHOST AI
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FEATURES
+    ==================================================== -->
+
+    <section
+      class="section"
+      id="features"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          02
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            DESKTOP FEATURES
+          </div>
+
+          <h2>
+
+            Familiar ideas.
+            <br>
+
+            <em>Reimagined for Windows.</em>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            01
+          </div>
+
+          <span class="feature-icon">
+            ◈
+          </span>
+
+          <h3>
+            Dock
+          </h3>
+
+          <p>
+            A responsive application Dock with
+            smooth magnification, active states
+            and quick access.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            02
+          </div>
+
+          <span class="feature-icon">
+            ◫
+          </span>
+
+          <h3>
+            Spaces
+          </h3>
+
+          <p>
+            Organize different tasks into separate
+            virtual desktop workspaces and switch
+            between them fluidly.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            03
+          </div>
+
+          <span class="feature-icon">
+            ⌘
+          </span>
+
+          <h3>
+            System Settings
+          </h3>
+
+          <p>
+            Shape the look and feel of your desktop
+            with system controls, preferences and
+            personal options.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            04
+          </div>
+
+          <span class="feature-icon">
+            ⌕
+          </span>
+
+          <h3>
+            Ghost AI
+          </h3>
+
+          <p>
+            Ask natural-language questions and use
+            registered desktop actions with the
+            optional Gemini-powered assistant.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            05
+          </div>
+
+          <span class="feature-icon">
+            ◉
+          </span>
+
+          <h3>
+            Finder &amp; Trash
+          </h3>
+
+          <p>
+            Work with virtual files and user-connected
+            folders, with local operations limited to
+            folders you grant.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            06
+          </div>
+
+          <span class="feature-icon">
+            ✦
+          </span>
+
+          <h3>
+            Themes
+          </h3>
+
+          <p>
+            Explore 29 animated theme previews and
+            carry your selected colors throughout
+            the desktop and built-in apps.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            07
+          </div>
+
+          <span class="feature-icon">
+            ◌
+          </span>
+
+          <h3>
+            Activity
+          </h3>
+
+          <p>
+            See recent desktop interactions and
+            return to earlier tasks with your
+            activity history.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            08
+          </div>
+
+          <span class="feature-icon">
+            ⌗
+          </span>
+
+          <h3>
+            Code Studio
+          </h3>
+
+          <p>
+            Run JavaScript and Python locally; install
+            supported C++ or Java toolchains when
+            you choose to use them.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            09
+          </div>
+
+          <span class="feature-icon">
+            ◒
+          </span>
+
+          <h3>
+            Host Connectivity
+          </h3>
+
+          <p>
+            View nearby Wi-Fi networks and manage
+            Bluetooth connections through Windows
+            host integrations.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            10
+          </div>
+
+          <span class="feature-icon">
+            ◇
+          </span>
+
+          <h3>
+            Quick Look
+          </h3>
+
+          <p>
+            Preview images and videos directly from
+            the desktop with streamed local media
+            and no base64 size limit.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            11
+          </div>
+
+          <span class="feature-icon">
+            ⌁
+          </span>
+
+          <h3>
+            Built-in Apps
+          </h3>
+
+          <p>
+            Keep everyday tools close, from browser
+            and calendar to camera, calculator
+            and media.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+
+        <article class="feature reveal">
+
+          <div class="feature-number">
+            12
+          </div>
+
+          <span class="feature-icon">
+            ⚙
+          </span>
+
+          <h3>
+            System Widgets
+          </h3>
+
+          <p>
+            Check live host CPU and memory readings
+            from the desktop System widget when
+            those metrics are available.
+          </p>
+
+          <div class="feature-line"></div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         DEVELOPER SECTION
+    ==================================================== -->
+
+    <section class="developer-section">
+
+      <div class="developer-glow"></div>
+
+      <div class="developer-content reveal">
+
+        <div class="eyebrow">
+          BUILT FOR CREATORS
+        </div>
+
+        <h2>
+          A desktop that
+          <br>
+          <em>works like you do.</em>
+        </h2>
+
+        <p>
+
+          ARLO OS brings developer tools and everyday
+          productivity into one customizable Windows
+          desktop, with local runtimes and an optional
+          AI assistant that keeps sensitive voice audio on-device.
+
+        </p>
+
+        <div class="developer-tags">
+
+          <span>
+            React
+          </span>
+
+          <span>
+            TypeScript
+          </span>
+
+          <span>
+            Node.js
+          </span>
+
+          <span>
+            AI
+          </span>
+
+          <span>
+            Browser
+          </span>
+
+          <span>
+            Workspace
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         REQUIREMENTS
+    ==================================================== -->
+
+    <section
+      class="section split"
+      id="requirements"
+    >
+
+      <div class="split-copy reveal">
+
+        <div class="section-number">
+          03
+        </div>
+
+        <div class="eyebrow">
+          GET STARTED
+        </div>
+
+        <h2>
+
+          Bring the
+          <br>
+
+          <em>experience home.</em>
+
+        </h2>
+
+        <p class="body-copy">
+
+          Get ARLO OS from the Microsoft Store or download
+          the Windows installer and launch your new
+          desktop experience.
+
+        </p>
+
+        <a
+          class="text-link magnetic"
+          href="#download"
+        >
+
+          Get ARLO OS
+
+          <span>
+            ↓
+          </span>
+
+        </a>
+
+      </div>
+
+<div class="spec-card reveal">
+
+  <div class="spec-card-header">
+
+    <span>
+      SYSTEM REQUIREMENTS
+    </span>
+
+    <span class="spec-status">
+      ● READY
+    </span>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Platform
+    </span>
+
+    <b>
+      Windows 10 / 11
+    </b>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Architecture
+    </span>
+
+    <b>
+      x64
+    </b>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Release
+    </span>
+
+    <b>
+      ARLO OS
+    </b>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Installer
+    </span>
+
+    <b>
+      NSIS / Platform Native
+    </b>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Runtime
+    </span>
+
+    <b>
+      Electron
+    </b>
+
+  </div>
+
+
+  <div class="spec-row">
+
+    <span>
+      Platform type
+    </span>
+
+    <b>
+      Cross-Platform Desktop Application
+    </b>
+
+  </div>
+
+</div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FREQUENTLY ASKED QUESTIONS
+    ==================================================== -->
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="section-head reveal">
+        <div class="section-number">04</div>
+        <div>
+          <div class="eyebrow">GOOD TO KNOW</div>
+          <h2 id="faq-title">Questions, <em>answered.</em></h2>
+          <p class="section-intro">The essentials for choosing, downloading and getting started with ARLO OS.</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>What is ARLO OS?</summary>
+          <p>ARLO OS is a customizable desktop environment with built-in apps, virtual workspaces, developer tools and Ghost AI, an optional AI assistant. Explore the screenshots and interactive preview on this page to see it in action.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Which platforms can I get ARLO OS for?</summary>
+          <p>ARLO OS is currently available for Windows. macOS and Linux releases are coming soon; visit the <a href="https://github.com/Abhishekkuntare/arlo-os/releases" target="_blank" rel="noopener noreferrer">official GitHub Releases page</a> for updates. Windows users can install it from the Microsoft Store or use the direct x64 installer on this page.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Is ARLO OS free?</summary>
+          <p>Yes. ARLO OS is free to download, and its source code is available on <a href="https://github.com/Abhishekkuntare/arlo-os" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Is the Windows installer signed?</summary>
+          <p>The standalone Windows installer is not Authenticode-signed, so Windows may show an Unknown publisher or SmartScreen warning. The Microsoft Store version is signed and receives updates through the Store.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Does Ghost AI require an internet connection?</summary>
+          <p>Ghost AI's Gemini-powered chat needs an internet connection and a Gemini API key. Optional wake-word speech recognition runs locally on your device; microphone audio stays on-device unless you ask Ghost AI for a response.</p>
+        </details>
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         INSTALL STEPS
+    ==================================================== -->
+
+    <section class="section install-section">
+
+      <div class="install-heading reveal">
+
+        <div class="eyebrow">
+          SIMPLE SETUP
+        </div>
+
+        <h2>
+
+          Download.
+          <em>Install.</em>
+          <br>
+          Transform your desktop.
+
+        </h2>
+
+      </div>
+
+
+      <div class="install-grid">
+
+        <div class="install-step reveal">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Download
+          </h3>
+
+          <p>
+            Choose ARLO OS from the Microsoft Store
+            or download the direct Windows installer.
+          </p>
+
+        </div>
+
+
+        <div class="install-step reveal">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Install
+          </h3>
+
+          <p>
+            Run the installer and follow the
+            simple Windows installation process.
+          </p>
+
+        </div>
+
+
+        <div class="install-step reveal">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Launch
+          </h3>
+
+          <p>
+            Open ARLO OS and start using
+            your new personal desktop environment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         RELEASE
+    ==================================================== -->
+
+    <section class="section release">
+
+      <div class="release-card reveal">
+
+        <div class="release-glow"></div>
+
+        <div class="release-info">
+
+          <div class="eyebrow">
+            CURRENT RELEASE
+          </div>
+
+          <div class="release-title">
+
+            <h2>
+              ARLO OS
+            </h2>
+
+            <span>
+              WINDOWS AVAILABLE
+            </span>
+
+          </div>
+
+          <p>
+            Modern, customizable desktop environment
+            for Windows. macOS and Linux releases are coming soon.
+          </p>
+
+          <div class="release-tags">
+
+            <span>
+              Windows 10
+            </span>
+
+            <span>
+              Windows 11
+            </span>
+
+            <span>
+              x64
+            </span>
+
+            <span>
+              Electron
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <a
+          class="button primary compact magnetic"
+          href="downloads/ARLO-OS-Setup.exe"
+          download
+        >
+
+          Download installer
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+      <div class="release-platform-links reveal">
+        <span>macOS and Linux releases are coming soon.</span>
+        <a href="https://github.com/Abhishekkuntare/arlo-os/releases" target="_blank" rel="noopener noreferrer">Follow updates on GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+
+
+      <div
+        class="notice reveal"
+        id="installerNotice"
+      >
+
+        <span class="notice-icon">
+          i
+        </span>
+
+        <p>
+          Enjoy ARLO OS on Windows today. We’re working on macOS and Linux releases—follow GitHub for updates.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="footer-brand">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="ARLO OS home"
+      >
+
+        <img class="brand-symbol" src="images/Screenshot%202026-10-05%20134343.png" alt="">
+
+      </a>
+
+
+    </div>
+
+
+    <div class="footer-center">
+
+      Built in India · Abhishek Kuntare
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a
+        href="https://github.com/Abhishekkuntare/arlo-os"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub ↗
+      </a>
+
+      <a href="#download">
+        Download
+      </a>
+
+      <a href="https://apps.microsoft.com/store/detail/9NN6LSN1KSZF?cid=DevShareMCLPCS" target="_blank" rel="noopener noreferrer">
+        Microsoft Store ↗
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js" defer></script>
+  <script src="showcase.js" defer></script>
+
+</body>
+</html>
