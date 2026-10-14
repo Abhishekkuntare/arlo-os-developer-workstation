@@ -167,6 +167,12 @@ body.lightbox-open { overflow:hidden; }
 }re-app-icon{display:block;width:38px;height:38px;flex:none;object-fit:contain;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:#080b12}
 .gallery-controls{display:flex;align-items:center;justify-content:space-between;margin:32px 0 14px;color:#969eaf;font-size:10px;font-variant-numeric:tabular-nums;letter-spacing:.16em}
 .gallery-controls>div{display:flex;gap:8px}
+.gallery-pagination{align-items:center;justify-content:space-between;gap:16px;margin:24px 0 0}
+.gallery-page-list{display:flex;align-items:center;justify-content:center;gap:8px}
+.gallery-page{display:grid;place-items:center;width:40px;height:40px;border:1px solid rgba(255,255,255,.1);border-radius:50%;background:rgba(255,255,255,.035);color:#969eaf;font-size:12px;font-variant-numeric:tabular-nums;cursor:pointer;transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease}
+.gallery-page:hover{transform:translateY(-2px);border-color:rgba(190,202,255,.28);color:#e8ebf5}
+.gallery-page[aria-current="page"]{border-color:rgba(173,187,255,.42);background:linear-gradient(135deg,rgba(114,130,231,.24),rgba(151,111,224,.16));color:#f2f3ff;box-shadow:0 5px 24px rgba(94,108,218,.12),inset 0 1px rgba(255,255,255,.08)}
+.gallery-arrow:disabled{cursor:not-allowed;opacity:.4;transform:none}
 .gallery-arrow{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(255,255,255,.13);border-radius:50%;background:rgba(255,255,255,.045);color:#f1f3fa;font-size:18px;cursor:pointer;transition:background .25s ease,border-color .25s ease,transform .25s ease}
 .gallery-arrow:hover{transform:translateY(-2px);border-color:rgba(200,210,255,.34);background:rgba(255,255,255,.1)}
 .system-gallery-grid{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;margin-top:0;padding:12px max(5%,calc((100% - 920px)/2)) 28px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
@@ -286,6 +292,10 @@ button:disabled{cursor:not-allowed;opacity:.55}
   .gallery-filters{flex-wrap:nowrap;overflow-x:auto;margin-right:-8px;padding:0 8px 8px 0;scrollbar-width:none}
   .gallery-filters::-webkit-scrollbar{display:none}
   .gallery-filter{flex:none;min-height:38px;padding:0 13px;font-size:10px}
+  .gallery-pagination{flex-wrap:wrap;justify-content:center;gap:12px}
+  .gallery-pagination>span{flex:0 0 100%;text-align:center}
+  .gallery-page-list{gap:6px}
+  .gallery-page{width:36px;height:36px}
   .system-gallery-grid{display:flex;grid-template-columns:none;grid-auto-rows:auto;gap:14px;margin-right:-4px;padding:4px 14px 18px 2px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:2px;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:rgba(160,174,255,.35) transparent;-webkit-overflow-scrolling:touch}
   .system-gallery-grid::-webkit-scrollbar{height:4px}
   .system-gallery-grid::-webkit-scrollbar-track{background:transparent}

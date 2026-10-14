@@ -4,3 +4,13 @@
 
 # Installer synchronization scripts
 /sync-installer.ps1
+
+# Next.js output and compatibility copies generated from the original site
+/.next/
+/node_modules/
+/public/images/
+/public/media/
+/public/media-manifest.json
+/public/site/
+/public/robots.txt
+/public/sitemap.xml

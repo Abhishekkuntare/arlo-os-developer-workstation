@@ -227,6 +227,36 @@
   ========================================================== */
 
   let gsapInitialized = false;
+  let smoothScrollInitialized = false;
+  let smoothScrollAttempts = 0;
+
+  function initSmoothScroll(gsap) {
+
+    if (smoothScrollInitialized || reducedMotion) return;
+
+    if (typeof window.Lenis === "undefined") {
+      if (smoothScrollAttempts < 25) {
+        smoothScrollAttempts += 1;
+        window.setTimeout(() => initSmoothScroll(gsap), 200);
+      }
+      return;
+    }
+
+    const lenis = new window.Lenis({
+      autoRaf: false,
+      anchors: true,
+      lerp: .085,
+      smoothWheel: true,
+      syncTouch: false
+    });
+
+    lenis.on("scroll", window.ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+    window.ScrollTrigger.refresh();
+    smoothScrollInitialized = true;
+
+  }
 
   function initGSAP() {
 
@@ -276,6 +306,8 @@
       );
 
     }
+
+    initSmoothScroll(gsap);
 
 
     /* ========================================================

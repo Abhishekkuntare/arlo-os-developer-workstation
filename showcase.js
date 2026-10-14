@@ -9,7 +9,9 @@
   const videoShell = document.getElementById("showcaseVideoShell");
   const galleryTrack = document.getElementById("systemGalleryTrack");
   const galleryPosition = document.getElementById("galleryPosition");
+  const galleryPages = document.getElementById("galleryPages");
   const galleryFilters = document.getElementById("galleryFilters");
+  const mediaVersion = document.querySelector('meta[name="arlo-media-version"]')?.content;
 
   const lightbox = document.getElementById("galleryLightbox");
   const image = document.getElementById("lightboxImage");
@@ -19,6 +21,12 @@
   const previous = document.getElementById("lightboxPrev");
   const next = document.getElementById("lightboxNext");
   const eyebrow = document.getElementById("lightboxEyebrow");
+
+  const optimizedAssetUrl = (file, width) => {
+    const basename = file.replace(/\.[^.]+$/, "");
+    const version = mediaVersion ? `?v=${mediaVersion}` : "";
+    return `/media/assets/${encodeURIComponent(`${basename}-${width}.webp`)}${version}`;
+  };
 
   const gallery = [
     ["AI Agents.png", "AI Agents", "Meet a team of helpful, purpose-built desktop assistants.", "AI & agents"],
@@ -65,7 +73,10 @@
     ["setting-Day Progress.png", "Day Progress", "See how your day is unfolding at a glance.", "Productivity"],
     ["setting-Health.png", "Health Settings", "Explore wellbeing and health-related preferences.", "Productivity"]
   ].map(([file, heading, description, category]) => ({
-    src: `public/assets/${encodeURIComponent(file)}`,
+    src: optimizedAssetUrl(file, 1600),
+    srcSet: [480, 960, 1600]
+      .map(width => `${optimizedAssetUrl(file, width)} ${width}w`)
+      .join(", "),
     heading,
     description,
     category
@@ -73,18 +84,53 @@
 
   let visibleGallery = gallery;
   let index = 0;
+  let currentPage = 0;
+  let activeCategory = "All";
+  const pageSize = 10;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const setGalleryPosition = () => {
     if (!galleryPosition) return;
-    galleryPosition.textContent = `${String(index + 1).padStart(2, "0")} / ${String(visibleGallery.length).padStart(2, "0")}`;
+    const firstItem = currentPage * pageSize + 1;
+    const lastItem = Math.min(firstItem + pageSize - 1, visibleGallery.length);
+    galleryPosition.textContent = `${String(firstItem).padStart(2, "0")}–${String(lastItem).padStart(2, "0")} OF ${String(visibleGallery.length).padStart(2, "0")}`;
   };
 
-  const renderGallery = category => {
+  const updateGalleryPagination = () => {
+    const pageCount = Math.ceil(visibleGallery.length / pageSize);
+    if (galleryPages) {
+      galleryPages.replaceChildren(...Array.from({ length: pageCount }, (_, pageIndex) => {
+        const button = document.createElement("button");
+        button.className = "gallery-page";
+        button.type = "button";
+        button.textContent = String(pageIndex + 1);
+        button.setAttribute("aria-label", `Page ${pageIndex + 1}`);
+        if (pageIndex === currentPage) {
+          button.setAttribute("aria-current", "page");
+        }
+        button.addEventListener("click", () => renderGallery(activeCategory, pageIndex));
+        return button;
+      }));
+    }
+
+    const previousPage = document.getElementById("galleryPrevious");
+    const nextPage = document.getElementById("galleryNext");
+    if (previousPage) previousPage.disabled = currentPage === 0;
+    if (nextPage) nextPage.disabled = currentPage >= pageCount - 1;
+  };
+
+  const renderGallery = (category, page = 0) => {
     if (!galleryTrack) return;
-    visibleGallery = category === "All" ? gallery : gallery.filter(item => item.category === category);
-    index = 0;
-    galleryTrack.replaceChildren(...visibleGallery.map((item, itemIndex) => {
+    if (category !== activeCategory) {
+      activeCategory = category;
+      visibleGallery = category === "All" ? gallery : gallery.filter(item => item.category === category);
+    }
+    const pageCount = Math.ceil(visibleGallery.length / pageSize);
+    currentPage = Math.max(0, Math.min(page, pageCount - 1));
+    const firstItem = currentPage * pageSize;
+    index = firstItem;
+    galleryTrack.replaceChildren(...visibleGallery.slice(firstItem, firstItem + pageSize).map((item, pageItemIndex) => {
+      const itemIndex = firstItem + pageItemIndex;
       const card = document.createElement("button");
       card.className = "system-shot";
       card.type = "button";
@@ -94,9 +140,12 @@
 
       const preview = document.createElement("img");
       preview.src = item.src;
+      preview.srcset = item.srcSet;
+      preview.sizes = "(max-width: 600px) 84vw, (max-width: 900px) 46vw, 31vw";
       preview.alt = `${item.heading} — ${item.description}`;
-      preview.loading = itemIndex < 2 ? "eager" : "lazy";
+      preview.loading = "lazy";
       preview.decoding = "async";
+      preview.fetchPriority = "low";
       card.append(preview);
 
       const caption = document.createElement("span");
@@ -120,6 +169,7 @@
 
     galleryTrack.classList.add("gallery-ready");
     setGalleryPosition();
+    updateGalleryPagination();
   };
 
   if (galleryTrack) {
@@ -156,11 +206,14 @@
   }
 
   const scrollToGalleryIndex = nextIndex => {
-    if (!galleryTrack) return;
+    if (!galleryTrack || !visibleGallery.length) return;
+    const targetPage = Math.floor(nextIndex / pageSize);
+    if (targetPage !== currentPage) renderGallery(activeCategory, targetPage);
     const cards = galleryTrack.children;
     if (!cards.length) return;
-    index = (nextIndex + cards.length) % cards.length;
-    const card = cards[index];
+    index = (nextIndex + visibleGallery.length) % visibleGallery.length;
+    const card = cards[index - currentPage * pageSize];
+    if (!card) return;
     card.scrollIntoView({
       behavior: reducedMotion ? "auto" : "smooth",
       block: "center"
@@ -177,7 +230,7 @@
       if (!cards.length) return;
       const trackBounds = galleryTrack.getBoundingClientRect();
       const trackCenter = trackBounds.left + trackBounds.width / 2;
-      index = cards.reduce((closestIndex, card, cardIndex) => {
+      const visibleIndex = cards.reduce((closestIndex, card, cardIndex) => {
         const bounds = card.getBoundingClientRect();
         const center = bounds.left + bounds.width / 2;
         const closest = cards[closestIndex].getBoundingClientRect();
@@ -185,6 +238,7 @@
           ? cardIndex
           : closestIndex;
       }, 0);
+      index = currentPage * pageSize + visibleIndex;
       setGalleryPosition();
     });
   }, { passive: true });
@@ -222,6 +276,8 @@
     scrollToGalleryIndex(index);
     const item = visibleGallery[index];
     image.src = item.src;
+    image.srcset = item.srcSet;
+    image.sizes = "(max-width: 700px) 94vw, 1180px";
     image.alt = `${item.heading} — ${item.description}`;
     title.textContent = item.heading;
     if (eyebrow) eyebrow.textContent = `${item.category} · ${item.description}`.toUpperCase();
@@ -244,8 +300,8 @@
     if (card) openGallery(Number(card.dataset.galleryIndex || 0));
   });
 
-  document.getElementById("galleryPrevious")?.addEventListener("click", () => scrollToGalleryIndex(index - 1));
-  document.getElementById("galleryNext")?.addEventListener("click", () => scrollToGalleryIndex(index + 1));
+  document.getElementById("galleryPrevious")?.addEventListener("click", () => renderGallery(activeCategory, currentPage - 1));
+  document.getElementById("galleryNext")?.addEventListener("click", () => renderGallery(activeCategory, currentPage + 1));
 
   close?.addEventListener("click", closeGallery);
   document.querySelector("[data-lightbox-close]")?.addEventListener("click", closeGallery);

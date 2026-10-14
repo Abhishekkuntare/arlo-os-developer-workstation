@@ -108,7 +108,6 @@
 
   <div class="grid"></div>
 
-
   <!-- =====================================================
        NAVIGATION
   ====================================================== -->
@@ -785,20 +784,15 @@
         <button class="gallery-filter" type="button" data-gallery-filter="Privacy" aria-pressed="false">Privacy</button>
       </div>
 
-      <div class="gallery-controls" aria-label="Feature gallery navigation">
-        <span id="galleryPosition" aria-live="polite">43 FEATURES</span>
-        <div>
-          <button class="gallery-arrow" id="galleryPrevious" type="button" aria-label="Previous feature">←</button>
-          <button class="gallery-arrow" id="galleryNext" type="button" aria-label="Next feature">→</button>
-        </div>
-      </div>
-
       <div class="system-gallery-grid" id="systemGalleryTrack" aria-label="ARLO OS feature gallery"></div>
 
-      <div class="gallery-foot reveal">
-        <span class="gallery-foot-line"></span>
-        <span>43 REAL FEATURES · SELECT ANY CARD TO EXPLORE</span>
-        <span class="gallery-foot-line"></span>
+      <div class="gallery-controls gallery-pagination" aria-label="Feature gallery pagination">
+        <span id="galleryPosition" aria-live="polite"></span>
+        <nav class="gallery-page-list" id="galleryPages" aria-label="Feature gallery pages"></nav>
+        <div>
+          <button class="gallery-arrow" id="galleryPrevious" type="button" aria-label="Previous page">←</button>
+          <button class="gallery-arrow" id="galleryNext" type="button" aria-label="Next page">→</button>
+        </div>
       </div>
     </section>
 
@@ -2115,7 +2109,7 @@
         </div>
 
 
-        <a
+        <!-- <a
           class="button primary compact magnetic"
           href="downloads/ARLO-OS-Setup.exe"
           download
@@ -2127,7 +2121,7 @@
             →
           </span>
 
-        </a>
+        </a> -->
 
       </div>
 

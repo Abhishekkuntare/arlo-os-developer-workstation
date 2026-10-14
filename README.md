@@ -176,6 +176,40 @@ The exact dependency versions used for a release are defined by the project's so
 
 ## 🏗️ Development
 
+### Website (Next.js)
+
+The website runs on Next.js. Its existing `index.html`, stylesheets, and browser
+scripts remain the source of truth so the current design and interactions are
+preserved during the migration. The preparation step copies the original images,
+browser scripts, and SEO files into `public/` before starting Next.js or creating
+a production build. It also creates responsive WebP image variants from the
+original PNG/JPEG assets; the originals are preserved, while the site selects a
+smaller variant for each screen size and loads gallery images as needed. Generated
+copies and optimized variants are intentionally ignored by Git. Optimized files
+use content-versioned URLs and long-lived browser caching. Desktop wheel scrolling
+uses Lenis synchronized with GSAP ScrollTrigger; touch scrolling stays native, and
+the smooth-scroll effect is disabled when reduced motion is requested. The
+product-tour video is hosted by Synthesia and loads only after the visitor selects
+Play, so its startup and buffering still depend on that service and the visitor's
+connection.
+
+```bash
+npm install
+npm run dev
+```
+
+For a production build and local production server:
+
+```bash
+npm run build
+npm run start
+```
+
+The Windows installer is served from the local `downloads/` folder when that
+file is present. Installer files are not part of this website's tracked source;
+deployments need their own release-download configuration if they should serve
+the installer.
+
 ### Requirements
 
 To develop ARLO OS locally, you should have:

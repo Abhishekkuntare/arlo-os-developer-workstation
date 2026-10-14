@@ -1,0 +1,19 @@
+{
+  "name": "arlo-os-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare:next": "node scripts/prepare-next.mjs",
+    "predev": "npm run prepare:next",
+    "dev": "next dev",
+    "prebuild": "npm run prepare:next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sharp": "^0.35.5"
+  }
+}
