@@ -1,0 +1,6 @@
+
+# Downloaded installers and generated files
+/downloads/
+
+# Installer synchronization scripts
+/sync-installer.ps1
