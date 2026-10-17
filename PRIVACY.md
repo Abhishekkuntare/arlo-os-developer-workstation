@@ -158,4 +158,4 @@ The effective date at the beginning of this document indicates the current versi
 
 For privacy-related questions concerning ARLO OS, contact the project maintainer through the official GitHub repository:
 
-https://github.com/Abhishekkuntare/arlo-os
+https://github.com/Abhishekkuntare/arlo-os-developer-workstation
