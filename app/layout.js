@@ -9,7 +9,7 @@ const mediaManifest = JSON.parse(
 );
 
 export const metadata = {
-  metadataBase: new URL("https://abhishek-operating-system.netlify.app"),
+  metadataBase: new URL("https://arloos.vercel.app/"),
   title: "ARLO OS — Modern Windows Desktop",
   description:
     "Discover ARLO OS, a modern, customizable Windows desktop with built-in apps, developer tools and optional Ghost AI. macOS and Linux releases are coming soon.",
